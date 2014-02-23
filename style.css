@@ -61,7 +61,7 @@ body {
 	box-shadow: 0px 1px 2px #000;
 }
 
-@media screen and (max-width: 1136px) {
+@media screen and (max-width: 480px) {
 
 	#top-headfooting img {
 		margin: 0 10% 0 10%;
@@ -84,7 +84,7 @@ body {
 
 	#welcome {
 		font-size: 2em;
-		font-weight: 500;
+		font-weight: 400;
 	}
 
 	.headfooting-img {
