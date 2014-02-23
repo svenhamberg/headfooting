@@ -13,15 +13,14 @@ body {
 	float: left;
 }
 
-@media screen and (min-width: 28.75em) {
-	.headfooting-img img {
-		width: 80%;
+.headfooting-img img {
+		max-width: 80%;
+		max-height: 100%;
 		border: 1px;
 		border-style: solid;
 		border-color: #323232;
 		box-shadow: 0px 1px 2px #000;
 	}
-}
 
 #welcome {
 	width: 100%;
@@ -58,4 +57,8 @@ body {
 .headfooting-img {
 	text-align: center;
 	margin: 5em;
+}
+
+@media screen and (max-width: 480px) {
+	
 }
