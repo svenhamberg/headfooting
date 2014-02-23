@@ -53,15 +53,31 @@ body {
 }
 
 .headfooting-img img {
-		max-width: 80%;
-		max-height: 100%;
-		border: 1px;
-		border-style: solid;
-		border-color: #323232;
-		box-shadow: 0px 1px 2px #000;
+	max-width: 100%;
+	max-height: 100%;
+	border: 1px;
+	border-style: solid;
+	border-color: #323232;
+	box-shadow: 0px 1px 2px #000;
 }
 
 @media screen and (max-width: 480px) {
+
+	#top-headfooting img {
+		text-align: center;
+		clear: both;
+	}
+
+	#bottom-headfooting img {
+		text-align: center;
+		clear: both;
+	}
+
+	.intro-text {
+	clear: both;
+	max-width: 70%;
+	margin: 1em 10% 1em 10%;
+}
 
 	#welcome {
 		width: 100%;
@@ -73,6 +89,10 @@ body {
 		/*line-height: 1.2em;*/
 		color: #ffffff;
 		position: relative;
+	}
+
+	.headfooting-img {
+		margin: 1em;
 	}
 	
 }
