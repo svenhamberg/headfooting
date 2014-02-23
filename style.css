@@ -60,5 +60,17 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+
+	#welcome {
+		width: 100%;
+		padding: .3em 0em .3em 0em;
+		box-shadow: 0px 0px 5px #000;
+		background-color: #2edbee;
+		text-align: center;
+		font-size: 2em;
+		/*line-height: 1.2em;*/
+		color: #ffffff;
+		position: relative;
+	}
 	
 }
