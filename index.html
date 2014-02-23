@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Headfooting.com</title>
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen, handheld" />
+	<link rel="stylesheet" type="text/css" href="enhanced.css" media="screen  and (min-width: 40.5em)" />
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="javascript/loadxmldoc.js"></script>
+	<script src="javascript/getHeadfooting.js"></script>
+	<script>
+	xmlDoc=loadXMLDoc("headfooting-images.xml");
+	</script>
+
+</head>
+
+<body>
+
+	<div id="top-headfooting">
+		<img src="images/top-headfooting.png">
+	</div>
+
+	<div id="welcome">			
+
+		Is Manga the furthest</br>we can take porn?
+
+	</div>
+
+	<div id="under-welcome">
+
+		<div id="bottom-headfooting">
+			<img src="images/bottom-headfooting.png">
+		</div>
+
+		<div class="intro-text">
+
+			<strong>Welcome to Headfooting.com</strong>
+			<p>Or, for the scholarly ventured visitor: Cephalopod.com - the world's largest collection of headfooting porn.</p>
+			<p>Think of Headfooting.com as a quest, where we search for the answer to the question we've all asked at some point:</p>
+			<p>Can I draw something that will get other people aroused?</p>
+
+		</div>
+
+	</div>
+
+	<script>
+
+	headfootingList=xmlDoc.getElementsByTagName('headfooting');
+
+	for (i=0;i<headfootingList.length;i++)
+	{ 
+		document.write("<div id=\"headfooting_"+i+"\" class=\"headfooting-img\"></div>");
+		getHeadfooting(i);
+	}
+
+	</script>
+
+	</body>
+
+	</html>
