@@ -5,12 +5,14 @@ body {
 }
 
 #top-headfooting img {
+	display: block;
 	margin: 0 10% 0 10%;
 	max-width: 80%;
 	clear: both;
 }
 
 #bottom-headfooting img {
+	display: block;
 	margin: 0 10% 0 10%;
 	max-width: 80%;
 	clear: both;
@@ -69,13 +71,11 @@ body {
 
 	#top-headfooting img {
 		margin: 0;
-		display: block;
 		max-width: 40%;
 	}
 
 	#bottom-headfooting img {
 		margin: 0;
-		display: block;
 		clear: none;
 		float: left;
 		max-width: 40%;
