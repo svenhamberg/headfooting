@@ -6,7 +6,7 @@
 	<title>Swipe</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="idangerous.swiper.css" />
-	<link rel="stylesheet" type="text/css" href="swiper-style.css" media="screen, handheld" />
+	<!-- <link rel="stylesheet" type="text/css" href="swiper-style.css" media="screen, handheld" /> -->
 	<script defer src="javascript/idangerous.swiper-2.x.min.js"></script>
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	<script src="javascript/loadxmldoc.js"></script>
@@ -21,19 +21,19 @@
 <body>
 
 	<script>
-		window.onload = function() {
-			var mySwiper = new Swiper('.swiper-container',{
+	window.onload = function() {
+		var mySwiper = new Swiper('.swiper-container',{
 			    //Your options here:
 			    mode:'horizontal',
 			    loop: true
 			    //etc..
 			});  
-		}
+	}
 	</script>
 
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
-			
+	<!-- 		
 			<script>
 
 			headfootingList=xmlDoc.getElementsByTagName('headfooting');
@@ -45,9 +45,25 @@
 			}
 
 			</script>
+		-->
 
+		<!--First Slide-->
+		<div class="swiper-slide"> 
+			Hey!
 		</div>
+
+		<!--Second Slide-->
+		<div class="swiper-slide">
+			Ho!
+		</div>
+
+		<!--Third Slide-->
+		<div class="swiper-slide"> 
+			Hey ho!
+		</div>
+		<!--Etc..-->
 	</div>
+</div>
 
 
 
