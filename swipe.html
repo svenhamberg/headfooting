@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Swipe</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="idangerous.swiper.css" />
+	<link rel="stylesheet" type="text/css" href="swiper-style.css" media="screen, handheld" />
+	<script defer src="javascript/idangerous.swiper-2.x.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="javascript/loadxmldoc.js"></script>
+	<script src="javascript/getHeadfooting.js"></script>
+	<script>
+	xmlDoc=loadXMLDoc("headfooting-images.xml");
+	</script>
+
+
+</head>
+
+<body>
+
+	<script>
+		window.onload = function() {
+			var mySwiper = new Swiper('.swiper-container',{
+			    //Your options here:
+			    mode:'horizontal',
+			    loop: true
+			    //etc..
+			});  
+		}
+	</script>
+
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			
+			<script>
+
+			headfootingList=xmlDoc.getElementsByTagName('headfooting');
+
+			for (i=0;i<headfootingList.length;i++)
+			{ 
+				document.write("<div id=\"headfooting_"+i+"\" class=\"swiper-slide\"></div>");
+				getHeadfooting(i);
+			}
+
+			</script>
+
+		</div>
+	</div>
+
+
+
+</body>
+
+</html>
