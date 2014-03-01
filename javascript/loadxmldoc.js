@@ -1,3 +1,5 @@
+xmlDoc=loadXMLDoc("headfooting-images.xml");
+
 function loadXMLDoc(dname)
 {
 if (window.XMLHttpRequest)
