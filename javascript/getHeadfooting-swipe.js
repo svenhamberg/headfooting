@@ -3,8 +3,10 @@ i = 0;
 
 headfootingList = xmlDoc.getElementsByTagName("headfooting");
 
-function getFirstHeadfooting() {
-	index = headfootingList.item(0);
+
+function getHeadfooting(headfootingIndex) {
+	
+	index = headfootingList.item(headfootingIndex);
 
 	headfooting = {
 
@@ -15,28 +17,29 @@ function getFirstHeadfooting() {
 		artist: index.getElementsByTagName("artist")[0].childNodes[0].nodeValue,
 
 	};
+
+	document.getElementById("image").innerHTML = "<img src=\"" + headfooting.image + "\">";
+	document.getElementById("category").innerHTML = "#" + headfooting.category;
+	document.getElementById("number").innerHTML = "Headfooting number " + i + 1;
+	document.getElementById("artist").innerHTML = "Artist: " + headfooting.artist;
+
+}
+
+function getFirstHeadfooting() {
 
 	i = 0;
 
-	document.getElementById("image").innerHTML="<img src=\""+headfooting.image+"\">";
+	headfooting = getHeadfooting(i);
+
 }
 
+
 function getLastHeadfooting() {
-	index = headfootingList.item(headfootingList.length - 1);
-
-	headfooting = {
-
-		image: index.getElementsByTagName("image")[0].childNodes[0].nodeValue,
-
-		category: index.getElementsByTagName("category")[0].childNodes[0].nodeValue,
-
-		artist: index.getElementsByTagName("artist")[0].childNodes[0].nodeValue,
-
-	};
 
 	i = headfootingList.length - 1;
 
-	document.getElementById("image").innerHTML="<img src=\""+headfooting.image+"\">";
+	headfooting = getHeadfooting(i);
+
 }
 
 function getNextHeadfooting() {
@@ -47,21 +50,7 @@ function getNextHeadfooting() {
 		i = 0;
 	};
 
-	index = headfootingList.item(i);
-
-	headfooting = {
-
-		image: index.getElementsByTagName("image")[0].childNodes[0].nodeValue,
-
-		category: index.getElementsByTagName("category")[0].childNodes[0].nodeValue,
-
-		artist: index.getElementsByTagName("artist")[0].childNodes[0].nodeValue,
-
-	};
-
-	document.getElementById("image").innerHTML="<img src=\""+headfooting.image+"\">";
-
-	console.log(i);
+	headfooting = getHeadfooting(i);
 
 }
 
@@ -72,21 +61,7 @@ function getPreviousHeadfooting() {
 		i = headfootingList.length - 1;
 	};
 
-	index = headfootingList.item(i);
-
-	headfooting = {
-
-		image: index.getElementsByTagName("image")[0].childNodes[0].nodeValue,
-
-		category: index.getElementsByTagName("category")[0].childNodes[0].nodeValue,
-
-		artist: index.getElementsByTagName("artist")[0].childNodes[0].nodeValue,
-
-	};
-
-	document.getElementById("image").innerHTML="<img src=\""+headfooting.image+"\">";		
-
-	console.log(i);
+	headfooting = getHeadfooting(i);
 
 }
 

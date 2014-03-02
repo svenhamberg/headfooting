@@ -12,7 +12,25 @@ body {
 .navButton {
 	display: inline;
 	max-width: 4em;
-	margin: 0 .1em 3em .1em;
+	margin: 1em .1em 3em .1em;
+}
+
+#category {
+	text-align: center;
+	font-size: 1.2em;
+	margin: 1em;
+}
+
+#number {
+	text-align: center;
+	font-size: .9em;
+	margin: .3em;
+}
+
+#artist {
+	text-align: center;
+	font-size: .9em;
+	margin: .3em;
 }
 
 #top-headfooting img {
@@ -143,7 +161,7 @@ body {
 	}
 
 	.headfooting-img {
-		margin: 5em;		
+		margin: 1em;		
 	}
 
 	.headfooting-img img {
