@@ -1,69 +1,96 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html>
-
 <head>
-	<title>Headfooting.com</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" type="text/css" href="style.css" media="screen, handheld" />
+	<title>Swiping</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+	
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.css">
+
+	<link rel="stylesheet" href="style.css">
 	<script src="javascript/loadxmldoc.js"></script>
-	<script src="javascript/getHeadfooting.js"></script>
-
-	<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	ga('create', 'UA-48528493-1', 'headfooting.com');
-	ga('send', 'pageview');
-
-	</script>
+	<script src="javascript/getHeadfooting-swipe.js"></script>
+	<script src="javascript/jquery.touchwipe.js"></script>
 
 </head>
-
 <body>
 
-	<div id="top-headfooting">
-		<img src="images/top-headfooting.png">
-	</div>
+	<div id="content">
 
-	<div id="welcome">			
-
-		Is Manga the furthest</br>we can take porn?
-
-	</div>
-
-	<div id="under-welcome">
-
-		<div id="bottom-headfooting">
-			<img src="images/bottom-headfooting.png">
+		<div id="top-headfooting">
+			<img src="images/top-headfooting.png">
 		</div>
 
-		<div class="intro-text">
+		<div id="welcome">			
 
-			<strong>Welcome to Headfooting.com</strong>
-			<p>Or, for the scholarly ventured visitor: Cephalopod.com - the world's largest collection of headfooting porn.</p>
-			<p>Think of Headfooting.com as a quest, where we search for the answer to the question we've all asked at some point:</p>
-			<p><em>Can I draw something that will get other people aroused?</em></p>
+			Is Manga the furthest</br>we can take porn?
 
 		</div>
 
+		<div id="under-welcome">
+
+			<div id="bottom-headfooting">
+				<img src="images/bottom-headfooting.png">
+			</div>
+
+			<div class="intro-text">
+
+				<strong>Welcome to Headfooting.com</strong>
+				<p>Or, for the scholarly ventured visitor: Cephalopod.com - the world's largest collection of headfooting porn.</p>
+				<p>Think of Headfooting.com as a quest, where we search for the answer to the question we've all asked at some point:</p>
+				<p><em>Can I draw something that will get other people aroused?</em></p>
+
+			</div>
+
+		</div>
+
+		<div id="container">
+
+			<div id="image" class="headfooting-img"></div>
+
+			<div id="number"></div>
+
+			<div id="category"></div>
+
+			<button class="navButton" onclick="getFirstHeadfooting()">&lt &lt</button>
+
+			<button class="navButton" onclick="getPreviousHeadfooting()">&lt</button>
+
+			<button class="navButton" onclick="getNextHeadfooting()">&gt</button>
+
+			<button class="navButton" onclick="getLastHeadfooting()">&gt &gt</a>
+
+			</div>
+
+			<script>
+
+			getFirstHeadfooting();
+
+			</script>
+
+			<script>
+			$("#image").touchwipe({
+				wipeLeft: function() { getNextHeadfooting(); },
+				wipeRight: function() { getPreviousHeadfooting(); },
+				min_move_x: 20,
+				preventDefaultEvents: false
+			});
+			</script>
+
+			<div class="hidden">
+
+				<script>
+
+				preloadImages();
+
+				</script>
+
+			</div>
+
+	<!-- <div class="swipe-button">
+		<a href="swipe2.html" data-transition="slide">Slide to next page</a>
+	</div> -->
 	</div>
-
-	<script>
-
-	headfootingList=xmlDoc.getElementsByTagName('headfooting');
-
-	for (i=0;i<headfootingList.length;i++)
-	{ 
-		document.write("<div id=\"headfooting_"+i+"\" class=\"headfooting-img\"></div>");
-		getHeadfooting(i);
-	}
-
-	</script>
-
 </body>
-
 </html>
