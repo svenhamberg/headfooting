@@ -21,7 +21,6 @@ function getHeadfooting(headfootingIndex) {
 	document.getElementById("image").innerHTML = "<img src=\"" + headfooting.image + "\">";
 	document.getElementById("category").innerHTML = "#" + headfooting.category;
 	document.getElementById("number").innerHTML = "Headfooting number " + (i + 1);
-	document.getElementById("artist").innerHTML = "Artist: " + headfooting.artist;
 
 }
 
