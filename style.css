@@ -11,7 +11,7 @@ body {
 
 .navButton {
 	display: inline;
-	max-width: 5%;
+	max-width: 10%;
 	margin: 0 1em 3em 1em;
 }
 
@@ -147,7 +147,7 @@ body {
 	}
 
 	.headfooting-img img {
-		max-height: 50%;
+		max-height: 80%;
 		max-width: 50%;
 	}
 	
