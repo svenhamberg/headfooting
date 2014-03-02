@@ -7,7 +7,6 @@
  * @version 1.1 (1st September 2010) - support wipe up and wipe down
  * @version 1.0 (15th July 2010)
  */
- 
  (function($) { 
  	$.fn.touchwipe = function(settings) {
  		var config = {
@@ -19,9 +18,9 @@
  			wipeDown: function() { },
  			preventDefaultEvents: true
  		};
-
+ 		
  		if (settings) $.extend(config, settings);
-
+ 		
  		this.each(function() {
  			var startX;
  			var startY;
@@ -32,7 +31,7 @@
  				startX = null;
  				isMoving = false;
  			}	
-
+ 			
  			function onTouchMove(e) {
  				if(config.preventDefaultEvents) {
  					e.preventDefault();
@@ -62,7 +61,7 @@
  					}
  				}
  			}
-
+ 			
  			function onTouchStart(e)
  			{
  				if (e.touches.length == 1) {
