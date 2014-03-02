@@ -5,7 +5,7 @@ body {
 }
 
 .hidden {
-	display: none;
+	visibility: hidden;
 }
 
 #container {
@@ -15,7 +15,7 @@ body {
 }
 
 .navButton {
-	visibility: hidden;
+	display: none;
 }
 
 #category {
