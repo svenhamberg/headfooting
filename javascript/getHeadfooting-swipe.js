@@ -4,6 +4,15 @@ i = 0;
 headfootingList = xmlDoc.getElementsByTagName("headfooting");
 
 
+function preloadImages() {
+
+	loadedImages = [];
+	for (count=0; count < headfootingList.length; count++) {
+		loadedImages[count] = new Image()
+		loadedImages[count].src = headfootingList.item(count).getElementsByTagName("image")[0].childNodes[0].nodeValue;
+	};
+}
+
 function getHeadfooting(headfootingIndex) {
 	
 	index = headfootingList.item(headfootingIndex);

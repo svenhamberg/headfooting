@@ -4,6 +4,10 @@ body {
 	background-color: #ecfcfe;
 }
 
+.hidden {
+	visibility: hidden;
+}
+
 #container {
 	margin: auto;
 	max-height: 568px;
