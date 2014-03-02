@@ -12,14 +12,14 @@ body {
 
 .navButton {
 	display: inline;
-	max-width: 4em;
-	margin: 1em .1em 3em .1em;
+	max-width: 5%;
+	margin: 5% 1%1em 3% 1%;
 }
 
 #category {
 	text-align: center;
 	font-size: 1.2em;
-	margin: 1em;
+	margin: 5%;
 }
 
 #number {
@@ -81,7 +81,7 @@ body {
 
 .headfooting-img {
 	text-align: center;
-	margin: 1em;
+	margin: 5%;
 }
 
 .headfooting-img img {
