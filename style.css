@@ -73,6 +73,7 @@ body {
 .headfooting-img {
 	text-align: center;
 	margin: 5%;
+	max-width: 100%;
 }
 
 .headfooting-img img {
