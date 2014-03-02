@@ -12,7 +12,7 @@ body {
 
 .navButton {
 	display: inline;
-	max-width: 5%;
+	max-width: 7%;
 	margin: 5% 1%1em 3% 1%;
 }
 
@@ -25,13 +25,13 @@ body {
 #number {
 	text-align: center;
 	font-size: .9em;
-	margin: .3em;
+	margin: 3%;
 }
 
 #artist {
 	text-align: center;
 	font-size: .9em;
-	margin: .3em;
+	margin: 3%;
 }
 
 #top-headfooting img {
