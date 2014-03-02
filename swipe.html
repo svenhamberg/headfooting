@@ -70,7 +70,7 @@
 	<script type="text/javascript">
 		$("#image").touchwipe({
 			wipeLeft: function() { getNextHeadfooting(); },
-			wipeRight: function() { alert("right"); },
+			wipeRight: getPreviousHeadfooting(),
 			min_move_x: 20,
 			min_move_y: 20,
 			preventDefaultEvents: true
