@@ -11,11 +11,12 @@
 	<link rel="stylesheet" href="style.css">
 	<script src="javascript/loadxmldoc.js"></script>
 	<script src="javascript/getHeadfooting-swipe.js"></script>
+	<script src="javascript/getHeadfooting.js"></script>
 
 </head>
 <body>
 
-		<div id="top-headfooting">
+	<div id="top-headfooting">
 		<img src="images/top-headfooting.png">
 	</div>
 
@@ -46,21 +47,25 @@
 
 		<div id="image" class="headfooting-img"></div>
 
-		<button class="navButton" onclick="getLastHeadfooting()">Last</button>
+		<button class="navButton" onclick="getFirstHeadfooting()">&lt &lt</button>
 
-		<button class="navButton" onclick="getNextHeadfooting()">Next</button>
+		<button class="navButton" onclick="getPreviousHeadfooting()">&lt</button>
+
+		<button class="navButton" onclick="getNextHeadfooting()">&gt</button>
+
+		<button class="navButton" onclick="getLastHeadfooting()">&gt &gt</a>
 
 	</div>
 
-		<script>
+	<script>
 
-			getFirstHeadfooting();
+		getFirstHeadfooting();
 
-		</script>
+	</script>
 
 
 
-	
+
 
 
 

@@ -11,7 +11,7 @@ body {
 
 .navButton {
 	display: inline;
-	max-width: 30%;
+	max-width: 3em;
 	margin: 0 1em 3em 1em;
 }
 
@@ -152,7 +152,7 @@ body {
 	}
 
 	.navButton {
-		max-width: 10%;
+		max-width: 5em;
 	}
 	
 }
