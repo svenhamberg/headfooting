@@ -187,6 +187,7 @@ body {
 	}
 
 	.navButton {
+		visibility: visible;
 		display: inline;
 		max-width: 5em;
 		margin: 1% 1% 3% 1%;
