@@ -4,10 +4,6 @@ body {
 	background-color: #ecfcfe;
 }
 
-#imagegallery{
-	
-}
-
 #container {
 	margin: auto;
 	max-height: 568px;
@@ -80,6 +76,9 @@ body {
 }
 
 .headfooting-img img {
+	vertical-align: middle;
+	margin-left: 3%;
+	margin-right: 3%;
 	max-height: 60%;
 	max-width: 100%;
 	border: 1px;
