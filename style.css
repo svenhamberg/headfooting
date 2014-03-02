@@ -76,7 +76,7 @@ body {
 
 .headfooting-img img {
 	max-height: 50%;
-	/*max-width: 100%;*/
+	max-width: 80%;
 	border: 1px;
 	border-style: solid;
 	border-color: #323232;
