@@ -8,13 +8,65 @@
 	<script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.css">
 
+	<link rel="stylesheet" href="style.css">
 	<script src="javascript/loadxmldoc.js"></script>
-	<script src="javascript/getHeadfooting.js"></script>
+	<script src="javascript/getHeadfooting-swipe.js"></script>
 
 </head>
 <body>
 
-	<a href="swipe2.html" data-transition="slide">Slide to next page</a>
+		<div id="top-headfooting">
+		<img src="images/top-headfooting.png">
+	</div>
+
+	<div id="welcome">			
+
+		Is Manga the furthest</br>we can take porn?
+
+	</div>
+
+	<div id="under-welcome">
+
+		<div id="bottom-headfooting">
+			<img src="images/bottom-headfooting.png">
+		</div>
+
+		<div class="intro-text">
+
+			<strong>Welcome to Headfooting.com</strong>
+			<p>Or, for the scholarly ventured visitor: Cephalopod.com - the world's largest collection of headfooting porn.</p>
+			<p>Think of Headfooting.com as a quest, where we search for the answer to the question we've all asked at some point:</p>
+			<p><em>Can I draw something that will get other people aroused?</em></p>
+
+		</div>
+
+	</div>
+
+	<div id="container">
+
+		<div id="image" class="headfooting-img"></div>
+
+		<button class="navButton" onclick="getLastHeadfooting()">Last</button>
+
+		<button class="navButton" onclick="getNextHeadfooting()">Next</button>
+
+	</div>
+
+		<script>
+
+			getFirstHeadfooting();
+
+		</script>
+
+
+
+	
+
+
+
+	<!-- <div class="swipe-button">
+		<a href="swipe2.html" data-transition="slide">Slide to next page</a>
+	</div> -->
 
 </body>
 </html>
