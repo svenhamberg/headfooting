@@ -45,7 +45,7 @@
 
 		</div>
 
-		<div id="container">
+		<div id="headfooting-container">
 
 			<div id="image" class="headfooting-img"></div>
 
@@ -59,38 +59,38 @@
 
 			<button class="navButton" onclick="getNextHeadfooting()">&gt</button>
 
-			<button class="navButton" onclick="getLastHeadfooting()">&gt &gt</a>
+			<button class="navButton" onclick="getLastHeadfooting()">&gt &gt</button>
 
-			</div>
+		</div>
+
+		<script>
+
+		getFirstHeadfooting();
+
+		</script>
+
+		<script>
+		$("#image").touchwipe({
+			wipeLeft: function() { getNextHeadfooting(); },
+			wipeRight: function() { getPreviousHeadfooting(); },
+			min_move_x: 20,
+			preventDefaultEvents: false
+		});
+		</script>
+
+		<div class="hidden">
 
 			<script>
 
-			getFirstHeadfooting();
+			preloadImages();
 
 			</script>
 
-			<script>
-			$("#image").touchwipe({
-				wipeLeft: function() { getNextHeadfooting(); },
-				wipeRight: function() { getPreviousHeadfooting(); },
-				min_move_x: 20,
-				preventDefaultEvents: false
-			});
-			</script>
-
-			<div class="hidden">
-
-				<script>
-
-				preloadImages();
-
-				</script>
-
-			</div>
+		</div>
 
 	<!-- <div class="swipe-button">
 		<a href="swipe2.html" data-transition="slide">Slide to next page</a>
 	</div> -->
-	</div>
+</div>
 </body>
 </html>

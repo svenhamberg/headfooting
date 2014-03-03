@@ -12,9 +12,10 @@ body {
 	visibility: hidden;
 }
 
-#container {
+#headfooting-container {
 	margin: auto;
 	max-height: 568px;
+	min-height: 100%;
 	text-align: center;
 }
 
@@ -165,7 +166,7 @@ body {
 		padding: .3em 0em .3em 0em;
 	}
 
-	#container {
+	#headfooting-container {
 		max-height: 100%;
 	}
 
