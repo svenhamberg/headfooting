@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery SmoothTouchScroll</title>
+
+		<script src="javascript/loadxmldoc.js"></script>
+		<script src="javascript/getHeadfooting.js"></script>
+		
+		<!-- the CSS for Smooth Touch Scroll -->
+		<link rel="Stylesheet" type="text/css" href="css/smoothTouchScroll.css" />
+		
+		<!-- Styles for my specific scrolling content -->
+		<style type="text/css">
+
+			.headfooting-img img {
+				max-width: 300px;
+				max-height: 634px;
+			}
+
+			.headfooting-img {
+				text-align: center;
+			}
+
+			#touchScroller
+			{
+				width:350px;
+				height: 600px;
+				position: relative;
+				margin: auto;
+			}
+			
+			/* Replace the last selector for the type(s) of element(s) you have in
+			   your scroller.
+			   If you have images use #touchScroller div.scrollableArea img,
+			   If you have div's use #touchScroller div.scrollableArea div,
+			   if you have links use #touchScroller div.scrollableArea a,
+			   or add several selectors if you have mixed content
+			   ...and so on. */
+			#touchScroller div.scrollableArea div
+			{
+				position: relative;
+				float: left;
+				margin: 0;
+				padding: 0 5px;
+				/* If you don't want the images in the scroller to be selectable, try the following
+				   block of code. It's just a nice feature that prevent the images from
+				   accidentally becoming selected/inverted when the user interacts with the scroller. */
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-o-user-select: none;
+				user-select: none;
+			}
+			
+		</style>
+		<!-- jQuery - Get it from Google API's -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<!-- jQuery UI - contains only widget -->
+		<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+		<!-- jQuery kinetic -->
+		<script src="js/jquery.kinetic.min.js"></script>
+		<!-- Smooth Touch Scroll -->
+		<script src="js/jquery.smoothTouchScroll.min.js"></script>
+	</head>
+	<body>
+		<div id="touchScroller">
+			<script>
+
+				headfootingList=xmlDoc.getElementsByTagName('headfooting');
+
+				for (i=0;i<headfootingList.length;i++)
+				{ 
+					document.write("<div id=\"headfooting_"+i+"\" class=\"headfooting-img\"></div>");
+					getHeadfooting(i);
+				}
+
+			</script>
+		</div>
+		
+		
+		<script>
+			$(function() {
+				$("#touchScroller").smoothTouchScroll({ continuousScrolling: true });
+			});
+		</script>
+	</body>
+</html>
