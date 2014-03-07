@@ -1,13 +1,12 @@
 body {
 	font-family: helvetica, arial;
 	margin: 0;
-	height: 100%;
 }
 
 #content {
 	background-color: #ecfcfe;
 	margin: 0;
-	height: inherit;
+	height: 100%;
 }
 
 .hidden {
