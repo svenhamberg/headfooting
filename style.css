@@ -1,13 +1,11 @@
 body {
 	font-family: helvetica, arial;
 	margin: 0;
-	height: 100%;
 }
 
 #content {
 	background-color: #ecfcfe;
 	margin: 0;
-	height: 100%;
 }
 
 .hidden {
@@ -169,17 +167,16 @@ body {
 	}
 
 	#headfooting-container {
-		height: 100%;
+		max-height: 100%;
 	}
 
 	.headfooting-img {
 		margin: 5% 0 2% 0;		
-		height: 100%;
 	}
 
 	.headfooting-img img {
-		/*max-height: 70%;*/
-		/*max-width: 50%;*/
+		max-height: 70%;
+		max-width: 50%;
 	}
 
 	#category {
