@@ -1,14 +1,75 @@
-function getHeadfooting(headfootingIndex)
-	{
 
-		headfooting=xmlDoc.getElementsByTagName("headfooting").item(headfootingIndex);
+i = 0;
 
-		image=headfooting.getElementsByTagName("image")[0].childNodes[0].nodeValue;
+headfootingList = xmlDoc.getElementsByTagName("headfooting");
 
-		category=headfooting.getElementsByTagName("category")[0].childNodes[0].nodeValue;
 
-		artist=headfooting.getElementsByTagName("artist")[0].childNodes[0].nodeValue;
+function preloadImages() {
 
-		document.getElementById("headfooting_"+headfootingIndex).innerHTML="<img src=\""+image+"\">"+"<p>#"+category+"</p>";
-		
-	}
+	loadedImages = [];
+	for (count=0; count < headfootingList.length; count++) {
+		loadedImages[count] = new Image()
+		loadedImages[count].src = headfootingList.item(count).getElementsByTagName("image")[0].childNodes[0].nodeValue;
+	};
+}
+
+function getHeadfooting(headfootingIndex) {
+	
+	index = headfootingList.item(headfootingIndex);
+
+	headfooting = {
+
+		image: index.getElementsByTagName("image")[0].childNodes[0].nodeValue,
+
+		category: index.getElementsByTagName("category")[0].childNodes[0].nodeValue,
+
+		artist: index.getElementsByTagName("artist")[0].childNodes[0].nodeValue,
+
+	};
+
+	document.getElementById("image").innerHTML = "&lt <img src=\"" + headfooting.image + "\"> &gt";
+	document.getElementById("number").innerHTML = "Headfooting number " + (i + 1);
+	document.getElementById("category").innerHTML = "#" + headfooting.category;
+
+}
+
+function getFirstHeadfooting() {
+
+	i = 0;
+
+	headfooting = getHeadfooting(i);
+
+}
+
+
+function getLastHeadfooting() {
+
+	i = headfootingList.length - 1;
+
+	headfooting = getHeadfooting(i);
+
+}
+
+function getNextHeadfooting() {
+
+	i = i+1;
+
+	if (i > (headfootingList.length - 1) ) {
+		i = 0;
+	};
+
+	headfooting = getHeadfooting(i);
+
+}
+
+function getPreviousHeadfooting() {
+	i = i-1;
+
+	if (i < 0) {
+		i = headfootingList.length - 1;
+	};
+
+	headfooting = getHeadfooting(i);
+
+}
+

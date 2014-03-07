@@ -2,7 +2,7 @@
 
 /* The scroll wrapper is always the same width and height as the containing element (div).
    Overflow is hidden because you don't want to show all of the scrollable area.
-*/
+   */
 div.scrollWrapper
 {
 	position: relative;
@@ -17,3 +17,48 @@ div.scrollableArea
 	width: auto;
 	height: 100%;
 }
+
+.headfooting-img img {
+	max-width: 300px;
+	max-height: 634px;
+	border: 1px;
+	border-style: solid;
+	border-color: #323232;
+	box-shadow: 0px 1px 2px #000;
+}
+
+.headfooting-img {
+	text-align: center;
+}
+
+#touchScroller
+{
+	width:350px;
+	height: 500px;
+	position: relative;
+	margin: auto;
+}
+
+/* Replace the last selector for the type(s) of element(s) you have in
+your scroller.
+If you have images use #touchScroller div.scrollableArea img,
+If you have div's use #touchScroller div.scrollableArea div,
+if you have links use #touchScroller div.scrollableArea a,
+or add several selectors if you have mixed content
+...and so on. */
+#touchScroller div.scrollableArea div
+{
+position: relative;
+float: left;
+margin: 0;
+padding: 0 5px;
+/* If you don't want the images in the scroller to be selectable, try the following
+block of code. It's just a nice feature that prevent the images from
+accidentally becoming selected/inverted when the user interacts with the scroller. */
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-o-user-select: none;
+user-select: none;
+}
+
