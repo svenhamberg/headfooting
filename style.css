@@ -202,11 +202,11 @@ body {
 	}
 
 	.headfooting-img {
-		margin: 5% 0 2% 0;		
+		margin: 5% 0 1% 0;		
 	}
 
 	.headfooting-img img {
-		max-height: 70%;
+		max-height: 65%;
 		max-width: 50%;
 	}
 
@@ -219,13 +219,14 @@ body {
 	#number {
 		text-align: center;
 		font-size: .9em;
-		margin: .5%;
+		padding: 0;
+		margin: 0;
 	}
 
 	.navButton, .navButtonRew, .navButtonFf {
 		display: inline;
 		max-width: 5em;
-		margin: 1% 1% 3% 1%;
+		margin: .5% 1% 2% 1%;
 	}
 
 	.navButtonMobile {
@@ -233,7 +234,7 @@ body {
 	}
 
 	#followButton {
-		padding: 0 0 3% 0;
+		padding: 0 0 2% 0;
 	}
 	
 }
