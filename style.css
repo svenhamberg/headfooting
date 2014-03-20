@@ -101,6 +101,10 @@ body {
 	box-shadow: 0px 1px 2px #000;
 }
 
+#followButton {
+	padding: 0 0 3% 0;
+}
+
 @media screen and (min-width: 40.5em) and (max-width: 60em) {
 
 	#top-headfooting img {
