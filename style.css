@@ -21,9 +21,13 @@ body {
 
 .navButton {
 	display: inline;
-		max-width: 5em;
-		margin: 1% 1% 3% 1%;
+	max-width: 5em;
+	margin: 1% 1% 3% 1%;
 	/*display: none;*/
+}
+
+.navButtonRew, .navButtonFf {
+	display: none;
 }
 
 #category {
@@ -194,10 +198,10 @@ body {
 		margin: .5%;
 	}
 
-/*	.navButton {
+	.navButton, .navButtonRew, .navButtonFf {
 		display: inline;
 		max-width: 5em;
 		margin: 1% 1% 3% 1%;
-	}*/
+	}
 	
 }
