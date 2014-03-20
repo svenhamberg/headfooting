@@ -205,6 +205,7 @@ body {
 	}
 
 	.headfooting-img img {
+		height: 500px;
 		max-height: 65%;
 		max-width: 50%;
 	}
