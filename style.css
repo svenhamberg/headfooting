@@ -22,7 +22,7 @@ body {
 .navButtonMobile{
 	display: inline;
 	max-width: 5em;
-	margin: 1% 1% 4% 1%;
+	margin: 2%;
 }
 
 .navButtonRew, .navButtonFf {
@@ -35,10 +35,11 @@ body {
 
 #category {
 	font-size: 1.4em;
-	padding: 2% 0 5% 0;
+	padding: 2% 0 10% 0;
 }
 
 #number {
+	margin: 3% 0 0 0;
 	font-size: .9em;
 }
 
@@ -89,7 +90,7 @@ body {
 
 .headfooting-img {
 	text-align: center;
-	margin: 5%;
+	margin: 0 5% 0 5%;
 }
 
 .headfooting-img img {
