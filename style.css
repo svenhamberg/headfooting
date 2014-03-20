@@ -22,7 +22,7 @@ body {
 .navButtonMobile{
 	display: inline;
 	max-width: 5em;
-	margin: 3% 2% 15% 2%;
+	margin: 3% 2% 10% 2%;
 }
 
 .navButton, .navButtonRew, .navButtonFf {
@@ -102,7 +102,8 @@ body {
 }
 
 #followButton {
-	padding: 0 0 3% 0;
+	padding: 0 0 5% 0;
+	text-align: center;
 }
 
 @media screen and (min-width: 40.5em) and (max-width: 60em) {
@@ -160,6 +161,10 @@ body {
 
 	.navButtonMobile {
 		display: none;
+	}
+
+	#followButton {
+		padding: 0 0 3% 0;
 	}
 	
 }
@@ -225,6 +230,10 @@ body {
 
 	.navButtonMobile {
 		display: none;
+	}
+
+	#followButton {
+		padding: 0 0 3% 0;
 	}
 	
 }
