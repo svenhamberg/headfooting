@@ -22,7 +22,7 @@ body {
 .navButtonMobile{
 	display: inline;
 	max-width: 5em;
-	margin: 3% 2% 10% 2%;
+	margin: 3% 2% 5% 2%;
 }
 
 .navButton, .navButtonRew, .navButtonFf {
@@ -31,7 +31,6 @@ body {
 
 #category {
 	font-size: 1.4em;
-	/*padding: 2%;*/
 }
 
 #number {
