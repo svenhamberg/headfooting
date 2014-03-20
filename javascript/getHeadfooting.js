@@ -27,7 +27,7 @@ function getHeadfooting(headfootingIndex) {
 
 	};
 
-	document.getElementById("image").innerHTML = "&lt <img src=\"" + headfooting.image + "\"> &gt";
+	document.getElementById("image").innerHTML = "<img src=\"" + headfooting.image + "\">";
 	document.getElementById("number").innerHTML = "Headfooting number " + (i + 1);
 	document.getElementById("category").innerHTML = "#" + headfooting.category;
 
