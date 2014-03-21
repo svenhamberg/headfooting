@@ -19,13 +19,13 @@ body {
 	text-align: center;
 }
 
-.navButtonMobile{
+.navButton {
 	display: inline;
 	max-width: 5em;
 	margin: 3% 2% 5% 2%;
 }
 
-.navButton, .navButtonRew, .navButtonFf {
+.navButtonRew, .navButtonFf {
 	display: none;
 }
 
