@@ -9,7 +9,7 @@ function preloadImages() {
 	loadedImages = [];
 	for (count=0; count < headfootingList.length; count++) {
 		loadedImages[count] = new Image()
-		loadedImages[count].src = headfootingList.item(count).getElementsByTagName("image")[0].childNodes[0].nodeValue;
+		loadedImages[count].src = "images/"+headfootingList.item(count).getElementsByTagName("image")[0].childNodes[0].nodeValue;
 	};
 }
 
@@ -27,7 +27,7 @@ function getHeadfooting(headfootingIndex) {
 
 	};
 
-	document.getElementById("image").innerHTML = "<img src=\"" + headfooting.image + "\">";
+	document.getElementById("image").innerHTML = "<img src=\"images/" + headfooting.image + "\">";
 	document.getElementById("number").innerHTML = "Headfooting number " + (i + 1);
 	document.getElementById("category").innerHTML = "#" + headfooting.category;
 
