@@ -35,7 +35,8 @@ function getHeadfooting(headfootingIndex) {
 
 function getFirstHeadfooting() {
 
-	i = 0;
+
+	i = headfootingList.length - 1;
 
 	headfooting = getHeadfooting(i);
 
@@ -44,7 +45,7 @@ function getFirstHeadfooting() {
 
 function getLastHeadfooting() {
 
-	i = headfootingList.length - 1;
+	i = 0;
 
 	headfooting = getHeadfooting(i);
 
@@ -52,10 +53,10 @@ function getLastHeadfooting() {
 
 function getNextHeadfooting() {
 
-	i = i+1;
+	i = i-1;
 
-	if (i > (headfootingList.length - 1) ) {
-		i = 0;
+	if (i < 0) {
+		i = headfootingList.length - 1;
 	};
 
 	headfooting = getHeadfooting(i);
@@ -63,10 +64,11 @@ function getNextHeadfooting() {
 }
 
 function getPreviousHeadfooting() {
-	i = i-1;
 
-	if (i < 0) {
-		i = headfootingList.length - 1;
+	i = i+1;
+
+	if (i > (headfootingList.length - 1) ) {
+		i = 0;
 	};
 
 	headfooting = getHeadfooting(i);
