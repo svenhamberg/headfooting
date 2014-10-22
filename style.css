@@ -12,6 +12,11 @@ body {
 	visibility: hidden;
 }
 
+.ui-page-theme-a a, html .ui-bar-a a, html .ui-body-a a, html body .ui-group-theme-a a {
+	text-decoration: none;
+	font-weight: 500;
+}
+
 #headfooting-container {
 	margin: auto;
 	max-height: 568px;
