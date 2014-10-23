@@ -105,9 +105,27 @@ body {
 	box-shadow: 0px 1px 2px #000;
 }
 
-#followButton {
-	padding: 0 0 5% 0;
+#socialButtons {
+	padding: 0 0 2% 0;
 	text-align: center;
+}
+
+.social {
+	padding: 0;
+}
+
+.social li {
+	display: inline;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 170px;
+}
+
+.fb-like {
+    position:relative;
+    top:-8px;
+}
+
 }
 
 @media screen and (min-width: 40.5em) and (max-width: 60em) {
