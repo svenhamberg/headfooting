@@ -23,33 +23,63 @@ let currentIndex = 0;
 
 function openLightbox(index) {
   currentIndex = index;
-  lightboxImg.src = images[currentIndex];
+  document.body.classList.add("noscroll");
+
+  // Clear any existing image
+  const container = document.querySelector(".lightbox-inner");
+  container.innerHTML = "";
+
+  const img = document.createElement("img");
+  img.src = images[currentIndex];
+  img.classList.add("active");
+  img.id = "lightbox-img";
+  container.appendChild(img);
+  lightboxImg = img;
+
   lightbox.classList.add("show");
 }
 
 function closeLightbox() {
+  document.body.classList.remove("noscroll");
   lightbox.classList.remove("show");
 }
 
-// New swipe animation logic
+// Reusable function to animate swipe
 function animateSwipe(newIndex, direction) {
-  const container = lightboxImg.parentNode;
+  const container = document.querySelector(".lightbox-inner");
   const oldImg = lightboxImg;
-  const newImg = oldImg.cloneNode();
+  const newImg = document.createElement("img");
+  newImg.src = images[newIndex];
 
-  currentIndex = newIndex;
-  newImg.src = images[currentIndex];
-  newImg.id = "lightbox-img";
-  newImg.classList.add("swipe-in");
-
-  oldImg.classList.add(direction === "left" ? "swipe-out-left" : "swipe-out-right");
+  // Position new image offscreen
+  newImg.classList.add(
+    direction === "left" ? "slide-in-from-right" : "slide-in-from-left"
+  );
 
   container.appendChild(newImg);
-  lightboxImg = newImg;
+  requestAnimationFrame(() => {
+    // Animate old image out
+    oldImg.classList.remove("active");
+    oldImg.classList.add(
+      direction === "left" ? "slide-out-to-left" : "slide-out-to-right"
+    );
 
-  setTimeout(() => {
-    oldImg.remove();
-  }, 300);
+    // Animate new image in
+    newImg.classList.remove(
+      direction === "left" ? "slide-in-from-right" : "slide-in-from-left"
+    );
+    newImg.classList.add("active");
+
+    // Update lightboxImg ref
+    lightboxImg = newImg;
+
+    // Clean up old image after transition
+    setTimeout(() => {
+      oldImg.remove();
+    }, 300);
+  });
+
+  currentIndex = newIndex;
 }
 
 function showNext() {
@@ -72,10 +102,20 @@ document.addEventListener("keydown", (e) => {
 
 // Touch support
 let touchStartX = 0;
+let touchStartY = 0;
 
 lightbox.addEventListener("touchstart", (e) => {
   touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
 });
+
+lightbox.addEventListener("touchmove", (e) => {
+  const touchY = e.touches[0].clientY;
+  const diffY = Math.abs(touchY - touchStartY);
+
+  // If mostly horizontal swipe, prevent vertical scroll
+  if (diffY < 50) e.preventDefault();
+}, { passive: false });
 
 lightbox.addEventListener("touchend", (e) => {
   const touchEndX = e.changedTouches[0].clientX;

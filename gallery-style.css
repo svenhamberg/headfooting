@@ -79,23 +79,49 @@ header {
   border-radius: 10px;
 }
 .lightbox-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .lightbox-inner img {
   position: absolute;
   transition: transform 0.3s ease, opacity 0.3s ease;
   max-width: 90%;
   max-height: 90%;
   border-radius: 10px;
+  opacity: 0;
+  transform: translateX(0);
+}
+.lightbox-inner img.active {
   opacity: 1;
+  z-index: 2;
 }
 
+/* Animation classes */
+.slide-in-from-right {
+  transform: translateX(100%);
+}
+
+.slide-in-from-left {
+  transform: translateX(-100%);
+}
+
+.slide-out-to-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.slide-out-to-right {
+  transform: translateX(100%);
+  opacity: 0;
+  z-index: 1;
+}
 .swipe-out-left {
   transform: translateX(-100%) scale(0.95);
   opacity: 0;
