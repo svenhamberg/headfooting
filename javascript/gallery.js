@@ -1,8 +1,8 @@
 const gallery = document.getElementById("gallery");
 const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
+let lightboxImg = document.getElementById("lightbox-img"); // now reassignable
 
-const imageCount = 60;
+const imageCount = 65;
 const images = [];
 
 for (let i = 1; i <= imageCount; i++) {
@@ -31,17 +31,38 @@ function closeLightbox() {
   lightbox.classList.remove("show");
 }
 
+// New swipe animation logic
+function animateSwipe(newIndex, direction) {
+  const container = lightboxImg.parentNode;
+  const oldImg = lightboxImg;
+  const newImg = oldImg.cloneNode();
+
+  currentIndex = newIndex;
+  newImg.src = images[currentIndex];
+  newImg.id = "lightbox-img";
+  newImg.classList.add("swipe-in");
+
+  oldImg.classList.add(direction === "left" ? "swipe-out-left" : "swipe-out-right");
+
+  container.appendChild(newImg);
+  lightboxImg = newImg;
+
+  setTimeout(() => {
+    oldImg.remove();
+  }, 300);
+}
+
 function showNext() {
-  currentIndex = (currentIndex + 1) % images.length;
-  lightboxImg.src = images[currentIndex];
+  const newIndex = (currentIndex + 1) % images.length;
+  animateSwipe(newIndex, "left");
 }
 
 function showPrev() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  lightboxImg.src = images[currentIndex];
+  const newIndex = (currentIndex - 1 + images.length) % images.length;
+  animateSwipe(newIndex, "right");
 }
 
-// Handle arrow keys
+// Keyboard support
 document.addEventListener("keydown", (e) => {
   if (!lightbox.classList.contains("show")) return;
   if (e.key === "ArrowRight") showNext();
@@ -49,7 +70,7 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeLightbox();
 });
 
-// Handle touch swipes
+// Touch support
 let touchStartX = 0;
 
 lightbox.addEventListener("touchstart", (e) => {
