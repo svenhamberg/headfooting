@@ -3,13 +3,13 @@
 <head>
 	<title>Headfooting.com</title>
 	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
-	<!-- Meta tags -->
+	<!-- Facebook tags -->
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Headfooting.com" />
 	<meta property="og:url" content="http://headfooting.com" />
 	<meta property="og:description" content="The world's largest collection of Headfooting porn" />
 	<meta property="og:image" content="images/top-headfooting.png" />
-	<!-- End meta tags -->
+	<!-- End Facebook tags -->
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.js"></script>
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.1/jquery.mobile-1.4.1.min.css">
@@ -32,55 +32,55 @@
 			<img src="images/top-headfooting.png">
 		</div>
 		<div id="welcome">			
-		Welcome to </br>Headfooting.com
-	</div>
-	<div id="under-welcome">
-		<div id="bottom-headfooting">
-			<img src="images/bottom-headfooting.png">
+			Welcome to <br>Headfooting.com
 		</div>
-		<div class="intro-text">
-			<p>Or for the scholarly ventured visitor: Cephalopod.com - the world's largest collection of headfooting porn.</p>
-			<p>Here you'll find headfooting nudity in a variety of categories, ranging from the classics to more circus oriented porn.</p>
-			<p>We keep adding new material all the time so you'll always have a reason to stop by!</p>
+		<div id="under-welcome">
+			<div id="bottom-headfooting">
+				<img src="images/bottom-headfooting.png">
+			</div>
+			<div class="intro-text">
+				<p>Or for the scholarly ventured visitor: Cephalopod.com - the world's largest collection of headfooting porn.</p>
+				<p>Here you'll find headfooting nudity in a variety of categories, ranging from the classics to more circus oriented porn.</p>
+				<p>We keep adding new material all the time so you'll always have a reason to stop by!</p>
+			</div>
 		</div>
-	</div>
-	<div id="headfooting-container">
-		<div id="image" class="headfooting-img"></div>
-		<div id="number"></div>
-		<div id="category"></div>
-		<button class="navButtonSkip" onclick="getFirstHeadfooting()">&lt &lt</button>
-		<button class="navButton" onclick="getPreviousHeadfooting()">&lt</button>
-		<button class="navButton" onclick="getNextHeadfooting()">&gt</button>
-		<button class="navButtonSkip" onclick="getLastHeadfooting()">&gt &gt</button>
-	</div>
+		<div id="headfooting-container">
+			<div id="image" class="headfooting-img"></div>
+			<div id="number"></div>
+			<div id="category"></div>
+			<button class="navButtonSkip" onclick="getFirstHeadfooting()">&lt &lt</button>
+			<button class="navButton" onclick="getPreviousHeadfooting()">&lt</button>
+			<button class="navButton" onclick="getNextHeadfooting()">&gt</button>
+			<button class="navButtonSkip" onclick="getLastHeadfooting()">&gt &gt</button>
+		</div>
 
-	<div id="socialButtons">
-		<ul class="social">
-			<li>
-				<a href="https://twitter.com/Headfooting" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @Headfooting</a>
-			</li>
-			<li>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-				<div class="fb-like" data-href="https://www.facebook.com/headfooting" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-			</li>
-		</ul>
-	</div>
-	<script>
-		getFirstHeadfooting();
-	</script>
-	<script>
-		$("#image").touchwipe({
-			wipeLeft: function() { getNextHeadfooting(); },
-			wipeRight: function() { getPreviousHeadfooting(); },
-			min_move_x: 20,
-			preventDefaultEvents: false
-		});
-	</script>
-	<div class="hidden">
+		<div id="socialButtons">
+			<ul class="social">
+				<li>
+					<a href="https://twitter.com/Headfooting" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @Headfooting</a>
+				</li>
+				<li>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+					<div class="fb-like" data-href="https://www.facebook.com/headfooting" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+				</li>
+			</ul>
+		</div>
 		<script>
-			preloadImages();
+			getFirstHeadfooting();
 		</script>
+		<script>
+			$("#image").touchwipe({
+				wipeLeft: function() { getNextHeadfooting(); },
+				wipeRight: function() { getPreviousHeadfooting(); },
+				min_move_x: 20,
+				preventDefaultEvents: false
+			});
+		</script>
+		<div class="hidden">
+			<script>
+				preloadImages();
+			</script>
+		</div>
 	</div>
-</div>
 </body>
 </html>
