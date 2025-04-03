@@ -54,7 +54,7 @@ function animateSwipe(newIndex, direction) {
   // Position new image offscreen
   newImg.classList.add(
     direction === "left" ? "slide-in-from-right" : "slide-in-from-left"
-  );
+    );
 
   container.appendChild(newImg);
   requestAnimationFrame(() => {
@@ -62,12 +62,12 @@ function animateSwipe(newIndex, direction) {
     oldImg.classList.remove("active");
     oldImg.classList.add(
       direction === "left" ? "slide-out-to-left" : "slide-out-to-right"
-    );
+      );
 
     // Animate new image in
     newImg.classList.remove(
       direction === "left" ? "slide-in-from-right" : "slide-in-from-left"
-    );
+      );
     newImg.classList.add("active");
 
     // Update lightboxImg ref
@@ -101,28 +101,85 @@ document.addEventListener("keydown", (e) => {
 });
 
 // Touch support
-let touchStartX = 0;
-let touchStartY = 0;
+let startX = 0;
+let startY = 0;
+let currentX = 0;
+let isDragging = false;
 
-lightbox.addEventListener("touchstart", (e) => {
-  touchStartX = e.touches[0].clientX;
-  touchStartY = e.touches[0].clientY;
+const container = document.querySelector(".lightbox-inner");
+
+container.addEventListener("touchstart", (e) => {
+  if (!lightboxImg) return;
+
+  startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
+  currentX = startX;
+  isDragging = true;
+
+  lightboxImg.style.transition = "none";
 });
 
-lightbox.addEventListener("touchmove", (e) => {
-  const touchY = e.touches[0].clientY;
-  const diffY = Math.abs(touchY - touchStartY);
+container.addEventListener("touchmove", (e) => {
+  if (!isDragging || !lightboxImg) return;
+
+  const touch = e.touches[0];
+  const dx = touch.clientX - startX;
+  const dy = touch.clientY - startY;
 
   // If mostly horizontal swipe, prevent vertical scroll
-  if (diffY < 50) e.preventDefault();
-}, { passive: false });
+  if (Math.abs(dx) > Math.abs(dy)) {
+    e.preventDefault(); // ⛔ prevents vertical scroll
+  }
 
-lightbox.addEventListener("touchend", (e) => {
-  const touchEndX = e.changedTouches[0].clientX;
-  const diffX = touchEndX - touchStartX;
+  currentX = touch.clientX;
+  lightboxImg.style.transform = `translateX(${dx}px)`;
+}, { passive: false }); // ⚠️ passive: false is required to call preventDefault()
 
-  if (Math.abs(diffX) > 50) {
-    if (diffX < 0) showNext();
-    else showPrev();
+container.addEventListener("touchend", () => {
+  if (!isDragging || !lightboxImg) return;
+
+  const dx = currentX - startX;
+  const threshold = 50;
+  isDragging = false;
+
+  lightboxImg.style.transition = "transform 0.3s ease";
+
+  if (dx < -threshold) {
+    lightboxImg.style.transform = "translateX(-100%)";
+    setTimeout(showNext, 200);
+  } else if (dx > threshold) {
+    lightboxImg.style.transform = "translateX(100%)";
+    setTimeout(showPrev, 200);
+  } else {
+    lightboxImg.style.transform = "translateX(0)";
   }
 });
+
+// Slide new image helper
+function slideInNewImage(index, direction) {
+  const newImg = document.createElement("img");
+  newImg.src = images[index];
+  newImg.style.position = "absolute";
+  newImg.style.top = "0";
+  newImg.style.left = "0";
+  newImg.style.transition = "transform 0.3s ease";
+  newImg.style.transform = `translateX(${direction === "right" ? "100%" : "-100%"})`;
+
+  container.appendChild(newImg);
+
+  requestAnimationFrame(() => {
+    newImg.style.transform = "translateX(0)";
+    if (lightboxImg) {
+      lightboxImg.style.transition = "transform 0.3s ease";
+      lightboxImg.style.transform = `translateX(${direction === "right" ? "-100%" : "100%"})`;
+    }
+  });
+
+  setTimeout(() => {
+    if (lightboxImg) lightboxImg.remove();
+    newImg.id = "lightbox-img";
+    newImg.classList.add("active");
+    lightboxImg = newImg;
+    currentIndex = index;
+  }, 300);
+}
