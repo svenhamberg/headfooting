@@ -37,6 +37,15 @@ function openLightbox(index) {
   lightboxImg = img;
 
   lightbox.classList.add("show");
+
+  // Google Analytics: Track lightbox open
+  if (typeof gtag === 'function') {
+    gtag('event', 'lightbox_open', {
+      'event_category': 'Gallery',
+      'event_label': images[currentIndex],
+      'image_index': currentIndex
+    });
+  }
 }
 
 function closeLightbox() {
@@ -80,6 +89,16 @@ function animateSwipe(newIndex, direction) {
   });
 
   currentIndex = newIndex;
+
+  // Google Analytics: Track image navigation in lightbox
+  if (typeof gtag === 'function') {
+    gtag('event', 'lightbox_image_navigate', {
+      'event_category': 'Gallery',
+      'event_label': images[currentIndex],
+      'image_index': currentIndex,
+      'direction': direction
+    });
+  }
 }
 
 function showNext() {
